@@ -3,6 +3,9 @@ tcl-tidy
 
 This package is Tcl bindings for libtidy.
 
+Tidy is a console application for Mac OS X, Linux, Windows, UNIX, and more. 
+It corrects and cleans up HTML and XML documents by fixing markup errors and 
+upgrading legacy code to modern standards.
 [libtidy](https://www.html-tidy.org/developer//) is the library version of HTML Tidy.
 Libtidy provides [API and Quick Reference](http://api.html-tidy.org/#part_apiref).
 

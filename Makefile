@@ -83,7 +83,7 @@ pkgdatadir	= $(datadir)/$(PKG_DIR)
 pkglibdir	= $(libdir)/$(PKG_DIR)
 pkgincludedir	= $(includedir)/$(PKG_DIR)
 
-top_builddir	= /home/danilo/tmp/tcl-tidy
+top_builddir	= /home/danilo/Public/tcl-tidy
 
 INSTALL_OPTIONS	=
 INSTALL		= $(SHELL) $(srcdir)/tclconfig/install-sh -c $(INSTALL_OPTIONS)
