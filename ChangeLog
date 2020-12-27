@@ -1,0 +1,9 @@
+2020-12-27 Danilo Chang
+
+	* Try to link to libtidy and include tidy.h
+	* Add namespace "tidy" for this package
+
+2020-12-26 Danilo Chang 
+
+	* Download sample extension and rename to tidy
+
