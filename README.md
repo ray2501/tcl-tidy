@@ -16,8 +16,8 @@ tcl-tidy is Licensed under the MIT license.
 Implement commands
 =====
 
-tidy::tidy   
-tidy::libversion  
+tidy::tidy create   
+tidy::tidy libversion  
 
 TIDYDOC quick_repair string encoding_name  
 TIDYDOC parse_string string encoding_name  
