@@ -34,8 +34,8 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
     }
 
     static const char *TIDYDOC_strs[] = {
-        "quick_repair string encname",
-        "parse_string string encname",
+        "quick_repair string",
+        "parse_string string",
         "clean_repair",
         "diagnose",
         "get_output",
@@ -105,13 +105,13 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
     {
         Tcl_Obj *pResultStr = NULL;
         char *input = NULL;
-        char *encname = NULL;
-        int str_len = 0, enc_len = 0;
+        char *encname = "utf8";
+        int str_len = 0;
         TidyBuffer buf;
 
-        if (objc != 4)
+        if (objc != 3)
         {
-            Tcl_WrongNumArgs(interp, 2, objv, "string encoding_name");
+            Tcl_WrongNumArgs(interp, 2, objv, "string");
             return TCL_ERROR;
         }
 
@@ -121,12 +121,6 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
             return TCL_ERROR;
         }
         
-        encname = Tcl_GetStringFromObj(objv[3], &enc_len);
-        if (!encname || enc_len < 1)
-        {
-            return TCL_ERROR;
-        }
-
         /*
          * Values include: ascii, latin1, raw, utf8, iso2022, mac,
          * win1252, utf16le, utf16be, utf16, big5 and shiftjis.
@@ -187,24 +181,18 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
 
     case TIDYDOC_PARSE_STRING: {
         char *input = NULL;
-        char *encname = NULL;
-        int str_len = 0, enc_len = 0;
+        char *encname = "utf8";
+        int str_len = 0;
         TidyBuffer buf;
 
-        if (objc != 4)
+        if (objc != 3)
         {
-            Tcl_WrongNumArgs(interp, 2, objv, "string encoding_name");
+            Tcl_WrongNumArgs(interp, 2, objv, "string");
             return TCL_ERROR;
         }
 
         input = Tcl_GetStringFromObj(objv[2], &str_len);
         if (!input || str_len < 1)
-        {
-            return TCL_ERROR;
-        }
-
-        encname = Tcl_GetStringFromObj(objv[3], &enc_len);
-        if (!encname || enc_len < 1)
         {
             return TCL_ERROR;
         }

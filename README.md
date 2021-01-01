@@ -22,8 +22,8 @@ Implement commands
 tidy::tidy create   
 tidy::tidy libversion  
 
-TIDYDOC quick_repair string encoding_name  
-TIDYDOC parse_string string encoding_name  
+TIDYDOC quick_repair string  
+TIDYDOC parse_string string  
 TIDYDOC clean_repair  
 TIDYDOC diagnose  
 TIDYDOC get_output  
@@ -74,7 +74,7 @@ Below is a simple HTML example:
 
         package require tidy
         set handle [tidy::tidy create]
-        $handle parse_string "<p>Hello" utf8
+        $handle parse_string "<p>Hello"
         $handle clean_repair
         $handle set_config [list force-output 1 show-body-only 1]
         puts [$handle get_output]
@@ -85,7 +85,7 @@ Below is a simple XML example:
         package require tidy
         set handle [tidy::tidy create]
         $handle set_opt input-xml 1
-        $handle parse_string "<HELLO>World" utf8
+        $handle parse_string "<HELLO>World"
         $handle clean_repair
         puts [$handle get_output]
         $handle close
