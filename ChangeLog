@@ -1,3 +1,8 @@
+2021-01-01 Danilo Chang
+
+	* Bump version to v0.2
+	* Just use utf8, remove encoding options
+
 2020-12-27 Danilo Chang
 
 	* Try to link to libtidy and include tidy.h
