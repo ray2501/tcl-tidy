@@ -1,5 +1,10 @@
+# -*- tcl -*-
+# Tcl package index file, version 1.1
 #
-# Tcl package index file
-#
-package ifneeded tidy 0.2 \
-    [list load [file join $dir libtidy0.2.so] [string totitle tidy]]
+if {[package vsatisfies [package provide Tcl] 9.0-]} {
+    package ifneeded tidy 0.2 \
+	    [list load [file join $dir libtcl9tidy0.2.so] [string totitle tidy]]
+} else {
+    package ifneeded tidy 0.2 \
+	    [list load [file join $dir libtidy0.2.so] [string totitle tidy]]
+}
