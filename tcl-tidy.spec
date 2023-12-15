@@ -6,7 +6,7 @@
 %define packagename tidy
 
 Name:           tcl-tidy
-Version:        0.2
+Version:        0.3
 Release:        0
 Summary:        Tcl bindings for libtidy
 License:        MIT
