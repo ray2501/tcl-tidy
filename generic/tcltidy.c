@@ -907,7 +907,7 @@ extern "C"
     {
         Tcl_Namespace *nsPtr; /* pointer to hold our own new namespace */
 
-        if (Tcl_InitStubs(interp, "8.6", 0) == NULL)
+        if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL)
         {
             return TCL_ERROR;
         }
