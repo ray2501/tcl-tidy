@@ -106,7 +106,7 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
         Tcl_Obj *pResultStr = NULL;
         char *input = NULL;
         char *encname = "utf8";
-        int str_len = 0;
+        Tcl_Size str_len = 0;
         TidyBuffer buf;
 
         if (objc != 3)
@@ -182,7 +182,7 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
     case TIDYDOC_PARSE_STRING: {
         char *input = NULL;
         char *encname = "utf8";
-        int str_len = 0;
+        Tcl_Size str_len = 0;
         TidyBuffer buf;
 
         if (objc != 3)
@@ -395,7 +395,7 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
     case TIDYDOC_SET_CONFIG:
     {
         TidyOption opt;
-        int list_objc = 0;
+        Tcl_Size list_objc = 0;
         Tcl_Obj **list_objv = NULL;
 
         if (objc != 3)
@@ -511,7 +511,7 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
     {
         char *optname = NULL;
         const char *optvalue = NULL;
-        int str_len;
+        Tcl_Size str_len;
         TidyOption opt;
         int int_value = 0;
         int bool_value = 0;
@@ -575,7 +575,7 @@ static int TIDY_DOC(void *cd, Tcl_Interp *interp, int objc, Tcl_Obj *const *objv
     {
         char *optname = NULL;
         char *optvalue = NULL;
-        int str_len;
+        Tcl_Size str_len;
         TidyOption opt;
         int int_value = 0;
 
@@ -948,7 +948,7 @@ extern "C"
         /* Add a thread exit handler to delete data */
         Tcl_CreateThreadExitHandler(TIDY_Thread_Exit, (ClientData)NULL);
 
-        Tcl_CreateObjCommand(interp, "tidy::tidy", (Tcl_ObjCmdProc *)TIDY_MAIN,
+        Tcl_CreateObjCommand(interp, "::tidy::tidy", (Tcl_ObjCmdProc *)TIDY_MAIN,
                              (ClientData)NULL, (Tcl_CmdDeleteProc *)NULL);
 
         return TCL_OK;
